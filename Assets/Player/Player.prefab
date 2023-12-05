@@ -199,8 +199,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1221a24d0d8544c939540d6c940170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  gravityMultiplier: -15
+  speed: 25
+  jumpForce: 30
+  gravityMultiplier: -35
+  jumpTime: {x: 0.2, y: 0.35}
+  landImpulseStrength: 4
+  landImpulseT: 0.001
   groundLayer:
     serializedVersion: 2
     m_Bits: 0

@@ -48,11 +48,6 @@ public class PlayerSoundwaveManager : MonoBehaviour
                 resettingSoundwave = false;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            Impulse(2.5f, 0.001f);
-        }
     }
 
     void UpdateSoundWaveSize(float size)
@@ -72,7 +67,7 @@ public class PlayerSoundwaveManager : MonoBehaviour
     float returnInterval;
     bool resettingSoundwave = false;
 
-    void Impulse(float strength, float returnInterval)
+    public void Impulse(float strength, float returnInterval)
     {
         tempImpulse = strength;
         resettingSoundwave = true;
