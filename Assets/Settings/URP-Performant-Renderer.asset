@@ -25,7 +25,7 @@ MonoBehaviour:
     overrideMaterial: {fileID: 2100000, guid: 431144ee6ce51a34387189817d74c966, type: 2}
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
-    depthCompareFunction: 5
+    depthCompareFunction: 8
     enableWrite: 0
     stencilSettings:
       overrideStencilState: 0
@@ -59,7 +59,8 @@ MonoBehaviour:
   - {fileID: 469439702996361210}
   - {fileID: 7038412132564856822}
   - {fileID: -2995359676897025757}
-  m_RendererFeatureMap: 46de64a35f5b803bfa1f9034ecc88306f6ef53208b76ad61232106743e586ed6
+  - {fileID: 2364195534436448169}
+  m_RendererFeatureMap: 46de64a35f5b803bfa1f9034ecc88306f6ef53208b76ad61232106743e586ed6a937a601504fcf20
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -81,10 +82,10 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 1463
+    m_Bits: 1335
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1975
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -126,6 +127,45 @@ MonoBehaviour:
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
     depthCompareFunction: 5
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &2364195534436448169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderGoal
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: RenderGoal
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 2048
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 8bf1579c0c1df8049aa281a90243d6f5, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 8
     enableWrite: 0
     stencilSettings:
       overrideStencilState: 0
