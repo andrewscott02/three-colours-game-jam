@@ -93,7 +93,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Alpha_Multiplier: 1
+    - _Alpha_Multiplier: 1.81
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -102,10 +102,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dither: 0.5
+    - _Dither: 0.7
     - _DstBlend: 10
     - _EnvironmentReflections: 1
-    - _FresnelPower: 0.25
+    - _FresnelPower: 0.16
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
