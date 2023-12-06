@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         soundManager = GetComponent<PlayerSoundwaveManager>();
         //rb = GetComponent<Rigidbody>();
+
+        land += Land;
+        move += Move;
     }
 
     private void FixedUpdate()
@@ -48,8 +51,20 @@ public class PlayerController : MonoBehaviour
     {
         xMove = Input.GetAxis("Horizontal");
 
+        if (!Mathf.Approximately(xMove, 0))
+            move();
+
         if (!grounded && controller.isGrounded)
-            Land();
+        {
+            if (ignoreLand)
+            {
+                ignoreLand = false;
+            }
+            else
+            {
+                land();
+            }
+        }
 
         grounded = controller.isGrounded;
 
@@ -79,8 +94,18 @@ public class PlayerController : MonoBehaviour
         canStopJump = true;
     }
 
+    bool ignoreLand = true;
+
     void Land()
     {
-        soundManager.Impulse(landImpulseStrength, landImpulseT);
+        //soundManager.Impulse(landImpulseStrength, landImpulseT);
+    }
+
+    public delegate void DMessage();
+    public DMessage move, land;
+
+    void Move()
+    {
+        //Empty
     }
 }

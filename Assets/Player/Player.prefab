@@ -96,7 +96,10 @@ GameObject:
   - component: {fileID: 8730713674476096625}
   - component: {fileID: 1455605348}
   - component: {fileID: 1455605349}
+  - component: {fileID: 7787543676112163092}
   - component: {fileID: 5271434929598987587}
+  - component: {fileID: 8730713673691679257}
+  - component: {fileID: 8730713673691679256}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -207,6 +210,22 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &7787543676112163092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730713674476096591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270fe47a47ce48b4c976fc27c17979c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
+    type: 3}
+  impulseMultiplier: 0.6
+  returnT: 0.001
 --- !u!143 &5271434929598987587
 CharacterController:
   m_ObjectHideFlags: 0
@@ -224,4 +243,33 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8730713673691679257
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730713674476096591}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &8730713673691679256
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730713674476096591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.52
   m_Center: {x: 0, y: 0, z: 0}

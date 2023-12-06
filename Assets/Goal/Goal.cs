@@ -12,6 +12,7 @@ public class Goal : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collided with player");
+            SceneManager.LoadScene(levelSelectScene.ToString());
         }
     }
 }
@@ -19,5 +20,5 @@ public class Goal : MonoBehaviour
 [System.Serializable]
 public enum E_Scenes
 {
-    MainMenu, LevelSelect, Level1
+    MainMenu, LevelSelect, Level1, Level2, Level3, Level4, Level5, Level6
 }
