@@ -5,13 +5,13 @@ using UnityEngine;
 public class Soundwave : MonoBehaviour
 {
     bool setup = false;
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
         if (!setup)
             return;
 
-        returnT = Mathf.Clamp(returnT + returnInterval, 0, 1);
+        returnT = Mathf.Clamp((returnT + returnInterval) * Time.fixedDeltaTime, 0, 1);
         tempImpulse = Mathf.Lerp(tempImpulse, 0, returnT);
 
         UpdateSoundWaveSize(tempImpulse);
