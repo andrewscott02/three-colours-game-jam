@@ -656,7 +656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 781346390}
+      - m_Target: {fileID: 1135966636}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
@@ -706,51 +706,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435407750}
   m_CullTransparentMesh: 1
---- !u!1 &781346389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 781346391}
-  - component: {fileID: 781346390}
-  m_Layer: 0
-  m_Name: MainMenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &781346390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781346389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83151254294a0d54690c587caacce53d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenes: 0000000002000000030000000400000005000000060000000700000008000000
---- !u!4 &781346391
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781346389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 586.20306, y: 282.61307, z: 2.5168126}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 4281706992144183674, guid: a4b9758386cdadb44a89495a260da70d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4281706992144183674, guid: a4b9758386cdadb44a89495a260da70d,
         type: 3}
@@ -975,6 +930,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1135966634}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1135966636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8668100330122799406, guid: a4b9758386cdadb44a89495a260da70d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1135966634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83151254294a0d54690c587caacce53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1256656509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1439,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -1601,7 +1573,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -1735,7 +1712,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c18d8fb378786c6449c2bcb57d1ffba5, type: 3}
 --- !u!224 &1040623851970258496 stripped
@@ -1870,7 +1852,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -2004,7 +1991,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -2138,7 +2130,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -2272,7 +2269,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -2406,7 +2408,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781346390}
+      objectReference: {fileID: 1135966636}
+    - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 469419573475697164, guid: c18d8fb378786c6449c2bcb57d1ffba5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
