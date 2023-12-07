@@ -18,15 +18,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(scenes[sceneIndex].ToString());
     }
 
-    #if UNITY_WEBPLAYER
-    public static string webplayerQuitURL = "http://google.com";
-    #endif
+    public static string webplayerQuitURL = "https://andrewjscott02.itch.io/creak";
 
     void CloseApplication()
     {
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #elif UNITY_WEBPLAYER
+        #elif UNITY_WEBPlayer || UNITY_WEBGL
         Application.OpenURL(webplayerQuitURL);
         #else
         Application.Quit();

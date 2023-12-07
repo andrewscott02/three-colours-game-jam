@@ -225,7 +225,7 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
-  returnT: 10
+  returnT: 5
 --- !u!143 &5271434929598987587
 CharacterController:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 20
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -252,7 +252,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8730713674476096591}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
