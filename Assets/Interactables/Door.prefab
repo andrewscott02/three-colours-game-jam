@@ -114,5 +114,5 @@ MonoBehaviour:
   pushSpeed: 1
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
-  impulseStrength: 4
+  impulseStrength: 30
   returnT: 5
