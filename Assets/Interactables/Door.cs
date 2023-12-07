@@ -25,7 +25,7 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        basePos = transform.position;
+        basePos = transform.localPosition;
         pushPos = basePos + pushOffset;
     }
 
@@ -34,7 +34,7 @@ public class Door : MonoBehaviour
         if (!moving)
             return;
 
-        transform.position = LerpVector3(basePos, pushPos, currentT);
+        transform.localPosition = LerpVector3(basePos, pushPos, currentT);
 
         currentT = Mathf.Clamp(push ? currentT + (Time.fixedDeltaTime * pushSpeed) : currentT - (Time.fixedDeltaTime * pushSpeed), 0, 1);
 

@@ -7,10 +7,11 @@ public class Impulse : MonoBehaviour
     public Object soundwaveObject;
     public float impulseMultiplier = 2f;
     public float returnT = 0.001f;
+    public float minImpactThreshold = 0.75f;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > 0.5f)
+        if (collision.relativeVelocity.magnitude > minImpactThreshold)
         {
             GameObject GO = Instantiate(soundwaveObject, collision.GetContact(0).point, Quaternion.identity) as GameObject;
 
