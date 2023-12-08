@@ -114,6 +114,7 @@ MonoBehaviour:
     type: 3}
   impulseMultiplier: 0.6
   returnT: 10
+  minImpactThreshold: 0.75
 --- !u!1 &4712231050532570013
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +229,7 @@ MonoBehaviour:
     type: 3}
   impulseMultiplier: 0.6
   returnT: 10
+  minImpactThreshold: 0.75
 --- !u!1 &6478173039846645833
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +344,7 @@ MonoBehaviour:
     type: 3}
   impulseMultiplier: 0.6
   returnT: 10
+  minImpactThreshold: 0.75
 --- !u!1 &7154627489873442297
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +459,7 @@ MonoBehaviour:
     type: 3}
   impulseMultiplier: 0.6
   returnT: 10
+  minImpactThreshold: 0.75
 --- !u!1 &7572820655793183505
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +473,7 @@ GameObject:
   - component: {fileID: 1785712188377678593}
   m_Layer: 10
   m_Name: Moveable Box
-  m_TagString: Untagged
+  m_TagString: Moveable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,3 +529,4 @@ MonoBehaviour:
     type: 3}
   impulseMultiplier: 0.6
   returnT: 5
+  minImpactThreshold: 0.75

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public Door door;
+    public Door[] doors;
 
     private void OnTriggerStay(Collider other)
     {
@@ -18,7 +18,15 @@ public class Button : MonoBehaviour
 
     void Interact(bool open)
     {
-        door.Interact(open);
+        if (open == currentlyOpen)
+            return;
+
+        currentlyOpen = open;
+
+        foreach (var item in doors)
+        {
+            item.Interact(open);
+        }
 
         if (open != lastImpulse)
         {
@@ -28,6 +36,7 @@ public class Button : MonoBehaviour
     }
 
     bool push = false;
+    bool currentlyOpen = false;
     Vector3 basePos;
     Vector3 pushPos;
     public Vector3 pushOffset = new Vector3(0, -1f, 0);
