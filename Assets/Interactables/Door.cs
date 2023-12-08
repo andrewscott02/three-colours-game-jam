@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public GameObject doorObj;
+
     public void Interact(bool open)
     {
         if (open == push)
@@ -25,7 +27,7 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        basePos = transform.localPosition;
+        basePos = doorObj.transform.localPosition;
         pushPos = basePos + pushOffset;
     }
 
@@ -34,7 +36,7 @@ public class Door : MonoBehaviour
         if (!moving)
             return;
 
-        transform.localPosition = LerpVector3(basePos, pushPos, currentT);
+        doorObj.transform.localPosition = LerpVector3(basePos, pushPos, currentT);
 
         currentT = Mathf.Clamp(push ? currentT + (Time.fixedDeltaTime * pushSpeed) : currentT - (Time.fixedDeltaTime * pushSpeed), 0, 1);
 
@@ -60,7 +62,7 @@ public class Door : MonoBehaviour
 
     private void SpawnImpulse()
     {
-        GameObject GO = Instantiate(soundwaveObject, transform.position, Quaternion.identity) as GameObject;
+        GameObject GO = Instantiate(soundwaveObject, doorObj.transform.position, Quaternion.identity) as GameObject;
 
         Soundwave soundwaveScript = GO.GetComponent<Soundwave>();
         soundwaveScript.Impulse(impulseStrength, returnT);
