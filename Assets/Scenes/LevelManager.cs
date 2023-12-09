@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
 
         finishedLevels = new bool[buttonManager.buttons.Length];
 

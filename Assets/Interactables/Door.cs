@@ -58,6 +58,7 @@ public class Door : MonoBehaviour
 
     public Object soundwaveObject;
     public float impulseStrength = 4f;
+    public float soundStrength = 10f;
     public float returnT = 5f;
 
     private void SpawnImpulse()
@@ -66,5 +67,7 @@ public class Door : MonoBehaviour
 
         Soundwave soundwaveScript = GO.GetComponent<Soundwave>();
         soundwaveScript.Impulse(impulseStrength, returnT);
+
+        AudioManager.instance.PlaySoundEffect(AudioManager.instance.defaultThud, soundStrength);
     }
 }

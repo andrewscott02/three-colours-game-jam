@@ -113,6 +113,7 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
+  soundMultiplier: 0.5
   returnT: 10
   minImpactThreshold: 0.75
 --- !u!1 &4712231050532570013
@@ -228,6 +229,7 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
+  soundMultiplier: 0.5
   returnT: 10
   minImpactThreshold: 0.75
 --- !u!1 &6478173039846645833
@@ -343,6 +345,7 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
+  soundMultiplier: 0.5
   returnT: 10
   minImpactThreshold: 0.75
 --- !u!1 &7154627489873442297
@@ -458,6 +461,7 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
+  soundMultiplier: 0.5
   returnT: 10
   minImpactThreshold: 0.75
 --- !u!1 &7572820655793183505
@@ -528,5 +532,6 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
+  soundMultiplier: 0.1
   returnT: 5
   minImpactThreshold: 0.75

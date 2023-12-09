@@ -225,6 +225,7 @@ MonoBehaviour:
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseMultiplier: 0.6
+  soundMultiplier: 0.1
   returnT: 5
   minImpactThreshold: 0.75
 --- !u!143 &5271434929598987587

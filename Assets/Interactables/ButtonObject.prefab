@@ -111,12 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137bd0c16fcc5c34ea4d76224c4b9d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
+  doors: []
   pushOffset: {x: 0, y: -0.4, z: 0}
   pushSpeed: 1.5
   soundwaveObject: {fileID: 6145896342597682332, guid: c7d042fd71c82dc449aa4d5e02059a44,
     type: 3}
   impulseStrength: 30
+  soundStrength: 3
   returnT: 5
   lastImpulse: 0
 --- !u!1 &2075132304737016208
