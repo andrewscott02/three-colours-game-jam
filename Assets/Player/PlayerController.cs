@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
     public float speed = 4;
     float xMove = 0;
 
-    bool jumping = false;
-    bool canStopJump = false;
     public float jumpForce = 10f;
     public float gravityMultiplier = 5f;
     public Vector2 jumpTime = new Vector2(0.2f, 0.5f);
@@ -29,7 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float yMove = jumping ? jumpForce : gravityMultiplier;
+        float yMove = gravityMultiplier;
+
+        Vector3 movement = new(speed * xMove * Time.fixedDeltaTime, yMove * Time.fixedDeltaTime);
+        //Add boosted movemenet
 
         controller.Move(new Vector3(speed * xMove * Time.fixedDeltaTime, yMove * Time.fixedDeltaTime));
         /*
@@ -42,24 +43,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        xMove = Input.GetAxis("Horizontal");
+        MovementInput();
 
-        if (!Mathf.Approximately(xMove, 0))
-            move();
-
-        if (!grounded && controller.isGrounded)
-        {
-            if (ignoreLand)
-            {
-                ignoreLand = false;
-            }
-            else
-            {
-                land();
-            }
-        }
-
-        grounded = controller.isGrounded;
+        CheckGroundedOrLanded();
 
         //if (Input.GetButtonDown("Jump") && grounded)
         //{
@@ -76,15 +62,29 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
-    void ForceStopJump()
+    private void MovementInput()
     {
-        jumping = false;
-        canStopJump = false;
+        xMove = Input.GetAxis("Horizontal");
+
+        if (!Mathf.Approximately(xMove, 0))
+            move();
     }
 
-    void EnableStopJump()
+    private void CheckGroundedOrLanded()
     {
-        canStopJump = true;
+        if (!grounded && controller.isGrounded)
+        {
+            if (ignoreLand)
+            {
+                ignoreLand = false;
+            }
+            else
+            {
+                land();
+            }
+        }
+
+        grounded = controller.isGrounded;
     }
 
     bool ignoreLand = true;
