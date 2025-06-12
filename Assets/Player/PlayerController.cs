@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,8 +11,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float gravityMultiplier = 5f;
     public Vector2 jumpTime = new Vector2(0.2f, 0.5f);
-    public float landImpulseStrength = 4f;
-    public float landImpulseT = 0.001f;
 
     protected Rigidbody rb;
     CharacterController controller;
@@ -22,12 +18,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     protected bool grounded;
 
-    PlayerSoundwaveManager soundManager;
-
     protected virtual void Start()
     {
         controller = GetComponent<CharacterController>();
-        soundManager = GetComponent<PlayerSoundwaveManager>();
         //rb = GetComponent<Rigidbody>();
 
         land += Land;
@@ -68,19 +61,19 @@ public class PlayerController : MonoBehaviour
 
         grounded = controller.isGrounded;
 
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            Debug.Log("Jump start");
-            jumping = true;
-            canStopJump = false;
-            Invoke("EnableStopJump", jumpTime.x);
-            Invoke("ForceStopJump", jumpTime.y);
-        }
+        //if (Input.GetButtonDown("Jump") && grounded)
+        //{
+        //    Debug.Log("Jump start");
+        //    jumping = true;
+        //    canStopJump = false;
+        //    Invoke("EnableStopJump", jumpTime.x);
+        //    Invoke("ForceStopJump", jumpTime.y);
+        //}
 
-        if (canStopJump && !Input.GetButton("Jump"))
-        {
-            ForceStopJump();
-        }
+        //if (canStopJump && !Input.GetButton("Jump"))
+        //{
+        //    ForceStopJump();
+        //}
     }
 
     void ForceStopJump()
@@ -96,15 +89,15 @@ public class PlayerController : MonoBehaviour
 
     bool ignoreLand = true;
 
-    void Land()
-    {
-        //soundManager.Impulse(landImpulseStrength, landImpulseT);
-    }
-
     public delegate void DMessage();
     public DMessage move, land;
 
     void Move()
+    {
+        //Empty
+    }
+
+    void Land()
     {
         //Empty
     }
