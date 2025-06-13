@@ -1,29 +1,52 @@
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using UnityEngine.UI;
-using System;
 
 public class BoostMovement : MonoBehaviour
 {
     [SerializeField]
-    private LayerMask boostLayers;
+    private LayerMask playerLayers;
 
-    PlayerController controller;
-
-    protected virtual void Start()
-    {
-        controller = GetComponent<PlayerController>();
-    }
+    [SerializeField]
+    private float boostStrength;
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collided");
         if (CheckLayer(other.gameObject.layer))
         {
-            controller.AddBoostMovement(Vector3.up, 15f);
+            if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController controller))
+            {
+                controller.AddBoostMovement(GetDirection(), boostStrength);
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Collided");
+        if (CheckLayer(other.gameObject.layer))
+        {
+            if (other.gameObject.TryGetComponent<PlayerController>(out PlayerController controller))
+            {
+                controller.AddBoostMovement(GetDirection(), boostStrength);
+            }
         }
     }
 
     private bool CheckLayer(int layer)
-        => (boostLayers & (1 << layer)) != 0;
+        => (playerLayers & (1 << layer)) != 0;
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 0.5f);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(GetDirection() * 5f, 0.5f);
+    }
+
+    private Vector3 GetDirection()
+    {
+        return transform.up;
+    }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8730713674476096626}
   - component: {fileID: 8730713674476096625}
   - component: {fileID: 1455605349}
-  - component: {fileID: 3687800081601592681}
+  - component: {fileID: 8641877750006790692}
   - component: {fileID: 5271434929598987587}
   - component: {fileID: 8730713673691679257}
   - component: {fileID: 8730713673691679256}
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dbf5d766e6724dd4e8abd2a924452f7a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,13 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  jumpForce: 30
-  gravityMultiplier: -35
-  jumpTime: {x: 0.2, y: 0.35}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &3687800081601592681
+  gravityMultiplier: -75
+--- !u!114 &8641877750006790692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,12 +114,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8730713674476096591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ca7d469c8b22c4bbd24e1c1bdabfcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f8820dd317941c488de3777d25a2bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostLayers:
-    serializedVersion: 2
-    m_Bits: 8192
+  defaultColour: 1
+  redMat: {fileID: 2100000, guid: 848f219f8bd67ff45a701220111cc458, type: 2}
+  greenMat: {fileID: 2100000, guid: 9bb2ff091bf3e1646a349bd2c23457c8, type: 2}
+  blueMat: {fileID: 2100000, guid: 16dd0bf419f2b5e4fa1a187c6c12869d, type: 2}
 --- !u!143 &5271434929598987587
 CharacterController:
   m_ObjectHideFlags: 0
