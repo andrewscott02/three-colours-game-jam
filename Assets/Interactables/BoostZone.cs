@@ -1,26 +1,24 @@
 using UnityEngine;
 
-public class BoostMovement : MonoBehaviour
+public class BoostZone : MonoBehaviour
 {
     [SerializeField]
     private LayerMask playerLayers;
 
     [SerializeField]
-    private float boostStrength;
+    private float boostStrength = 5.5f;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided");
-        if (CheckLayer(other.gameObject.layer))
-        {
-            if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController controller))
-            {
-                controller.AddBoostMovement(GetDirection(), boostStrength);
-            }
-        }
+        CheckTrigger(other);
     }
 
     private void OnTriggerStay(Collider other)
+    {
+        CheckTrigger(other);
+    }
+
+    private void CheckTrigger(Collider other)
     {
         Debug.Log("Collided");
         if (CheckLayer(other.gameObject.layer))

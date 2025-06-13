@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     private float gravityMultiplier = -75f;
 
     [SerializeField]
-    private float boostLoss = 7.5f;
+    private float boostLossDuration = 0.8f; //move to boost applier
+    private float boostLossCurrentInterval = 0;
+    private float boostLossInterval = 0;
 
     protected Rigidbody rb;
     CharacterController controller;
@@ -32,16 +34,26 @@ public class PlayerController : MonoBehaviour
         float yMove = gravityMultiplier;
 
         Vector3 movement = new(speed * xMove * Time.fixedDeltaTime, yMove * Time.fixedDeltaTime);
+
+        if (grounded && controller.isGrounded && boostMovement.magnitude > 0)
+        {
+            movement *= 0.5f;
+        }
+
         movement += boostMovement;
 
         controller.Move(movement);
 
-        boostMovement = Vector3.Lerp(boostMovement, Vector3.zero, boostLoss * Time.fixedDeltaTime);
+        boostLossCurrentInterval += boostLossInterval * Time.fixedDeltaTime;
+
+        boostMovement = Vector3.Lerp(boostMovement, Vector3.zero, boostLossCurrentInterval);
     }
 
     public void AddBoostMovement(Vector3 direction, float strength)
     {
         boostMovement = direction * strength;
+        boostLossInterval = 1 / boostLossDuration;
+        boostLossCurrentInterval = 0;
     }
 
     private void Update()
