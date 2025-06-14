@@ -6,7 +6,9 @@ public class Bouncer : MonoBehaviour
     private LayerMask playerLayers;
 
     [SerializeField]
-    private float bounceStrength = 0.02f;
+    private Vector2 bounceStrength;
+    [SerializeField]
+    private float bounceLossDuration = 0.8f;
 
     [SerializeField]
     private Vector2 bounceMinMax;
@@ -25,13 +27,16 @@ public class Bouncer : MonoBehaviour
     {
         if (CheckLayer(collision.collider.gameObject.layer))
         {
-            float impulseStrength = Mathf.Clamp(collision.relativeVelocity.magnitude, bounceMinMax.x, bounceMinMax.y);
+            //collision.impulse.magnitude
+            //collision.relativeVelocity.magnitude
+            float impulseStrength = Mathf.Clamp(collision.impulse.magnitude, bounceMinMax.x, bounceMinMax.y);
             Vector3 direction = -collision.GetContact(0).normal;
-            direction *= impulseStrength;
+            direction *= bounceStrength;
+            //direction *= impulseStrength;
 
             if (collision.collider.gameObject.TryGetComponent<PlayerController>(out PlayerController controller))
             {
-                controller.AddBoostMovement(direction, bounceStrength);
+                controller.AddBoostMovement(direction, impulseStrength, bounceLossDuration);
             }
         }
     }

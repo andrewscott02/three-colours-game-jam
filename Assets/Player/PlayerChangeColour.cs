@@ -13,9 +13,14 @@ public class PlayerChangeColour : MonoBehaviour
     [SerializeField]
     private Material blueMat;
 
-    private MeshRenderer playerRenderer;
+    [SerializeField]
+    private GameObject backgroundGameObject;
+    private MeshRenderer backgroundRenderer;
 
     private Dictionary<E_Colours, Material> matsByColours;
+
+    public delegate void DChangeColour(E_Colours colour);
+    public DChangeColour changeColour;
 
     private static readonly Dictionary<E_Colours, E_ColourLayerMasks> layerMasksByColours = new()
     {
@@ -26,7 +31,7 @@ public class PlayerChangeColour : MonoBehaviour
 
     private void Start()
     {
-        playerRenderer = GetComponent<MeshRenderer>();
+        backgroundRenderer = backgroundGameObject.GetComponent<MeshRenderer>();
 
         matsByColours = new()
         {
@@ -35,6 +40,7 @@ public class PlayerChangeColour : MonoBehaviour
             {E_Colours.Blue, blueMat },
         };
 
+        changeColour += ChangeColour;
         ChangeColour(defaultColour);
     }
 
@@ -49,7 +55,7 @@ public class PlayerChangeColour : MonoBehaviour
     {
         if (Input.GetButtonDown($"Change{colour}"))
         {
-            ChangeColour(colour);
+            changeColour(colour);
         }
     }
 
@@ -57,6 +63,6 @@ public class PlayerChangeColour : MonoBehaviour
     {
         gameObject.layer = LayerMask.NameToLayer(layerMasksByColours[colour].ToString());
 
-        playerRenderer.material = matsByColours[colour];
+        backgroundRenderer.material = matsByColours[colour];
     }
 }

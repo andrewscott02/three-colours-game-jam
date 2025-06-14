@@ -106,10 +106,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dither: 0.7
+    - _Dither: 1.15
     - _DstBlend: 10
     - _EnvironmentReflections: 1
-    - _FresnelPower: 0.16
+    - _FresnelPower: -0.22
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0

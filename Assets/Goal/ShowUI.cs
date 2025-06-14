@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ShowUI : MonoBehaviour
 {
-    public PlayerController controller;
+    public PlayerController moveController;
+    public PlayerChangeColour colourController;
     public E_Delegates delegateType;
 
     public GameObject showElement;
@@ -14,10 +15,40 @@ public class ShowUI : MonoBehaviour
         switch (delegateType)
         {
             case E_Delegates.move:
-                controller.move += Show;
+                moveController.move += Show;
                 break;
             case E_Delegates.land:
-                controller.land += Show;
+                moveController.land += Show;
+                break;
+            case E_Delegates.changeAny:
+            case E_Delegates.changeRed:
+            case E_Delegates.changeGreen:
+            case E_Delegates.changeBlue:
+                colourController.changeColour += CheckColour;
+                break;
+            default:
+                break;
+        }
+    }
+
+    void CheckColour(E_Colours colour)
+    {
+        switch (delegateType)
+        {
+            case E_Delegates.changeAny:
+                Show();
+                break;
+            case E_Delegates.changeBlue:
+                if (colour == E_Colours.Blue)
+                    Show();
+                break;
+            case E_Delegates.changeGreen:
+                if (colour == E_Colours.Green)
+                    Show();
+                break;
+            case E_Delegates.changeRed:
+                if (colour == E_Colours.Red)
+                    Show();
                 break;
             default:
                 break;
@@ -32,5 +63,5 @@ public class ShowUI : MonoBehaviour
 
 public enum E_Delegates
 {
-    move, land
+    move, land, changeAny, changeBlue, changeGreen, changeRed,
 }

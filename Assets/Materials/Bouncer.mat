@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy
+  m_Name: Bouncer
   m_Shader: {fileID: -6465566751694194690, guid: a99cd0e3e719a2f4aafeed596b778662,
     type: 3}
   m_Parent: {fileID: 0}
@@ -97,7 +97,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Alpha_Multiplier: 0.92
+    - _Alpha_Multiplier: 1.55
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -106,10 +106,10 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dither: 0.92
+    - _Dither: 1.41
     - _DstBlend: 10
     - _EnvironmentReflections: 1
-    - _FresnelPower: -1
+    - _FresnelPower: -0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0

@@ -7,6 +7,8 @@ public class BoostZone : MonoBehaviour
 
     [SerializeField]
     private float boostStrength = 5.5f;
+    [SerializeField]
+    private float boostLossDuration = 0.8f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,7 +27,7 @@ public class BoostZone : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent<PlayerController>(out PlayerController controller))
             {
-                controller.AddBoostMovement(GetDirection(), boostStrength);
+                controller.AddBoostMovement(GetDirection(), boostStrength, boostLossDuration);
             }
         }
     }

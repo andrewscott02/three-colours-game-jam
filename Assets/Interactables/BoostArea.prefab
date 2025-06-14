@@ -71,7 +71,8 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 320
-  boostStrength: 5.5
+  boostStrength: 4.5
+  boostLossDuration: 0.8
 --- !u!1 &3154223499824196538
 GameObject:
   m_ObjectHideFlags: 0

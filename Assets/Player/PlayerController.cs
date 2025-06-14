@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityMultiplier = -75f;
 
-    [SerializeField]
-    private float boostLossDuration = 0.8f; //move to boost applier
     private float boostLossCurrentInterval = 0;
     private float boostLossInterval = 0;
 
@@ -47,10 +45,15 @@ public class PlayerController : MonoBehaviour
         boostLossCurrentInterval += boostLossInterval * Time.fixedDeltaTime;
 
         boostMovement = Vector3.Lerp(boostMovement, Vector3.zero, boostLossCurrentInterval);
+
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
     }
 
-    public void AddBoostMovement(Vector3 direction, float strength)
+    public void AddBoostMovement(Vector3 direction, float strength, float boostLossDuration)
     {
+        direction.z = 0;
         boostMovement = direction * strength;
         boostLossInterval = 1 / boostLossDuration;
         boostLossCurrentInterval = 0;
