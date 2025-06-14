@@ -20,6 +20,8 @@ public class PlayerInputController : MonoBehaviour
         movementController = GetComponent<PlayerController>();
         colourController = GetComponent<PlayerChangeColour>();
 
+        ResetInputs();
+
         inputs.FindAction("Move").performed += MoveInput;
         inputs.FindAction("Move").canceled += MoveInput;
 
@@ -30,6 +32,28 @@ public class PlayerInputController : MonoBehaviour
         inputs.FindAction("Quit").performed += Quit;
 
         changeControls += InputChanged;
+    }
+
+    private void OnDisable()
+    {
+        ResetInputs();
+    }
+
+    private void OnDestroy()
+    {
+        ResetInputs();
+    }
+
+    private void ResetInputs()
+    {
+        inputs.FindAction("Move").performed -= MoveInput;
+        inputs.FindAction("Move").canceled -= MoveInput;
+
+        inputs.FindAction("ChangeRed").performed -= ChangeRed;
+        inputs.FindAction("ChangeGreen").performed -= ChangeGreen;
+        inputs.FindAction("ChangeBlue").performed -= ChangeBlue;
+
+        inputs.FindAction("Quit").performed -= Quit;
     }
 
     private void MoveInput(InputAction.CallbackContext context)
@@ -64,7 +88,7 @@ public class PlayerInputController : MonoBehaviour
 
         inputs.FindAction("Quit").performed -= Quit;
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void CheckInput(InputAction.CallbackContext context)

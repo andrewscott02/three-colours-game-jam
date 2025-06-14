@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowUI : MonoBehaviour
@@ -49,6 +47,27 @@ public class ShowUI : MonoBehaviour
             case E_Delegates.changeRed:
                 if (colour == E_Colours.Red)
                     Show();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        switch (delegateType)
+        {
+            case E_Delegates.move:
+                moveController.move -= Show;
+                break;
+            case E_Delegates.land:
+                moveController.land -= Show;
+                break;
+            case E_Delegates.changeAny:
+            case E_Delegates.changeRed:
+            case E_Delegates.changeGreen:
+            case E_Delegates.changeBlue:
+                colourController.changeColour -= CheckColour;
                 break;
             default:
                 break;

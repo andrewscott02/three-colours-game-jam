@@ -1,11 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]
+    private InputActionAsset inputs;
+
     public E_Scenes[] scenes;
+
+    public GameObject defaultButton;
+
+    private void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(defaultButton);
+
+        inputs.FindAction("Move").performed += CheckInput;
+        inputs.FindAction("Move").canceled += CheckInput;
+
+        inputs.FindAction("ChangeRed").performed += CheckInput;
+        inputs.FindAction("ChangeGreen").performed += CheckInput;
+        inputs.FindAction("ChangeBlue").performed += CheckInput;
+
+        inputs.FindAction("Quit").performed += CheckInput;
+    }
+
+    public void CheckInput(InputAction.CallbackContext context)
+    {
+        bool usingGamepad = context.control.device.name != "Keyboard";
+
+        if (EventSystem.current != null)
+        {
+            if (usingGamepad && EventSystem.current.currentSelectedGameObject == null)
+            {
+                EventSystem.current.SetSelectedGameObject(defaultButton);
+            }
+        }
+    }
 
     public void LoadScene(int sceneIndex)
     {

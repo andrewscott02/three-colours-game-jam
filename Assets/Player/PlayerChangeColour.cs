@@ -44,6 +44,11 @@ public class PlayerChangeColour : MonoBehaviour
         ChangeColour(defaultColour);
     }
 
+    private void OnDestroy()
+    {
+        changeColour -= ChangeColour;
+    }
+
     private void ChangeColour(E_Colours colour)
     {
         gameObject.layer = LayerMask.NameToLayer(layerMasksByColours[colour].ToString());
