@@ -44,21 +44,6 @@ public class PlayerChangeColour : MonoBehaviour
         ChangeColour(defaultColour);
     }
 
-    private void Update()
-    {
-        CheckColourChange(E_Colours.Red);
-        CheckColourChange(E_Colours.Green);
-        CheckColourChange(E_Colours.Blue);
-    }
-
-    private void CheckColourChange(E_Colours colour)
-    {
-        if (Input.GetButtonDown($"Change{colour}"))
-        {
-            changeColour(colour);
-        }
-    }
-
     private void ChangeColour(E_Colours colour)
     {
         gameObject.layer = LayerMask.NameToLayer(layerMasksByColours[colour].ToString());

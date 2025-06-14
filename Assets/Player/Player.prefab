@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 8730713674476096627}
   - component: {fileID: 8730713674476096626}
   - component: {fileID: 8730713674476096625}
+  - component: {fileID: 2670314326553734969}
   - component: {fileID: 1455605349}
   - component: {fileID: 8641877750006790692}
   - component: {fileID: 5271434929598987587}
   - component: {fileID: 8730713673691679257}
   - component: {fileID: 8730713673691679256}
+  - component: {fileID: 8018301107896127028}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -91,6 +93,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2670314326553734969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730713674476096591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5653735bbca7f240afc468581fd5eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputs: {fileID: -944628639613478452, guid: b8d689c7fcf6ef64792e549b4b6c35ae, type: 3}
 --- !u!114 &1455605349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,30 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   gravityMultiplier: -80
-  boostedGravityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &8641877750006790692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,3 +210,50 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.52
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8018301107896127028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730713674476096591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b8d689c7fcf6ef64792e549b4b6c35ae,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: db79188a-0628-4c75-ba76-3b1ccb7c18ca
+    m_ActionName: 'Player/Move[/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2461fe7b-1dae-4ed4-b8f3-2cfb7b7ddb02
+    m_ActionName: 'Player/ChangeRed[/Keyboard/l,/XInputControllerWindows/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 728db347-f0f5-4309-b39d-1a3d4e515e40
+    m_ActionName: 'Player/ChangeGreen[/Keyboard/k,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6e1ec77c-27e5-4f2d-9d75-483ed590d216
+    m_ActionName: 'Player/ChangeBlue[/Keyboard/j,/XInputControllerWindows/buttonWest]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

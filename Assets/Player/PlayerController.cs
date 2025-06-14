@@ -61,14 +61,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        MovementInput();
-
         CheckGroundedOrLanded();
     }
 
-    private void MovementInput()
+    public void MovementInput(float movement)
     {
-        xMove = Input.GetAxis("Horizontal");
+        xMove = movement;
 
         if (!Mathf.Approximately(xMove, 0))
             move();
